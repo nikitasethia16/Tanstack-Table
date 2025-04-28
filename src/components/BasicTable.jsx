@@ -83,27 +83,17 @@ const Basictable = () => {
     data: data,
     columns: columnDef,
     getCoreRowModel: getCoreRowModel(),
-    columnResizeMode:'onChange' | 'onEnd'
   });
   return (
     <>
       <TableContainer component={Paper}>
-        <Table sx={{ width:tableInstance.getTotalSize()  }} border={1}>
+        <Table sx={{ maxWidth:'700' }} border={1}>
           <TableHead>
             {tableInstance.getHeaderGroups().map((headerEl) => (
               <StyledTableRow key={headerEl.id}>
                 {headerEl.headers.map((columnEl) => (
-                  <StyledTableCell key={columnEl.id} colSpan={columnEl.colSpan} align="center" sx={{width:columnEl.getSize(),position: 'relative', 
-                    overflow: 'visible',     
-                    userSelect: 'none',}}>
+                  <StyledTableCell key={columnEl.id} colSpan={columnEl.colSpan} align="center">
                    {columnEl.isPlaceholder ? null : flexRender(columnEl.column.columnDef.header, columnEl.getContext())}
-                   {columnEl.column.getCanResize() && (
-                   <StyledResize resize={columnEl.column.getIsResizing() ? true : false} onMouseDown={columnEl.getResizeHandler()} onTouchStart={columnEl.getResizeHandler()}
-                   style={{
-                    transform:columnEl.column.getIsResizing() ? `translateX(${tableInstance.getState().columnSizingInfo.deltaOffset}px)` : ''
-                   }}
-                   ></StyledResize>
-                )}
                   </StyledTableCell>
                 ))}
               </StyledTableRow>
