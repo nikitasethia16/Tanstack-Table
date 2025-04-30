@@ -103,7 +103,6 @@ const VisibilityTable = () => {
         />
         {
             tableInstance.getAllLeafColumns().map((e, index)=>{
-              debugger;
               return (
                 <FormControlLabel
                   key={index}

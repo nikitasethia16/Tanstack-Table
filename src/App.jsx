@@ -1,4 +1,5 @@
 import Basictable from "./components/BasicTable"
+import FilterTable from "./components/FilterTable"
 import SortingTable from "./components/SortingTable"
 import VisibilityTable from "./components/VisibilityTable"
 import StudentTable from "./StudenTable"
@@ -13,7 +14,8 @@ function App() {
      {/* <StudentTable/>  //with resize feature */}
 {/* <ToggleStudentTable/> */}
 {/* <SortingTable/> */}
-<VisibilityTable/>
+{/* <VisibilityTable/> */}
+<FilterTable/>
     </>
   )
 }
